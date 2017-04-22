@@ -1,0 +1,13 @@
+{
+  "name": "react-collapsible-panel",
+  "version": "1.0.0",
+  "main": "./dist/index.js",
+  "author": "Curtis Wilkinson",
+  "license": "MIT",
+  "dependencies": {
+    "@types/react": "^15.0.22",
+    "react": "^15.5.4",
+    "react-animate-height": "^0.9.1",
+    "tslint-react": "^2.6.0"
+  }
+}
