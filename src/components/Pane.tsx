@@ -38,15 +38,11 @@ class Pane extends React.PureComponent<Props, State> {
     }
   }
 
-  private onFocusFn = (event: React.FocusEvent<HTMLDivElement>): void => {
-    document.addEventListener( 'keyup', this.keyListenerFn)
-  }
+  private onFocusFn = (): void => document.addEventListener( 'keyup', this.keyListenerFn)
 
-  private onBlurFn = (event: React.FocusEvent<HTMLDivElement>): void => {
-    document.removeEventListener('keyup')
-  }
+  private onBlurFn = (): void => document.removeEventListener('keyup')
 
-  private toggleOpenFn = () => {
+  private toggleOpenFn = (): void => {
     this.setState(prevState => ({ open: !prevState.open }))
   }
 
