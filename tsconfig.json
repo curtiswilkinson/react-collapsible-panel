@@ -24,6 +24,7 @@
   ],
   "exclude": [
     "build",
+    "dist",
     "scripts",
     "acceptance-tests",
     "webpack",

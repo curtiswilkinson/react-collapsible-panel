@@ -1,8 +1,8 @@
 import { shallow } from 'enzyme'
 import * as React from 'react'
-import Pane from './Pane'
-import * as ArrowUp from 'react-icons/lib/md/keyboard-arrow-up'
 import * as ArrowDown from 'react-icons/lib/md/keyboard-arrow-down'
+import * as ArrowUp from 'react-icons/lib/md/keyboard-arrow-up'
+import Pane from './Pane'
 
 describe('<Pane />', () => {
   describe('Render', () => {

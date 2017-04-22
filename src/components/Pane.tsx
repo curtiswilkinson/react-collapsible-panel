@@ -1,7 +1,7 @@
 import * as React from 'react'
 import * as AnimateHeight from 'react-animate-height'
-import * as ArrowUp from 'react-icons/lib/md/keyboard-arrow-up'
 import * as ArrowDown from 'react-icons/lib/md/keyboard-arrow-down'
+import * as ArrowUp from 'react-icons/lib/md/keyboard-arrow-up'
 
 interface Props {
   animationDuration?: number
