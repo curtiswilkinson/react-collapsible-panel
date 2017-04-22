@@ -18,6 +18,7 @@
     "react-animate-height": "^0.9.1",
     "react-dom": "^15.5.4",
     "react-test-renderer": "^15.5.4",
+    "tslint": "^5.1.0",
     "tslint-react": "^2.6.0",
     "typescript": "^2.2.2"
   },

@@ -31,11 +31,11 @@ class Pane extends React.PureComponent<Props, State> {
       this.setState({ open: nextProps.open })
     }
   }
-  
+
   private onKeyUpFn = (event: React.KeyboardEvent<HTMLDivElement>): void => {
     if (event.key === 'Enter') {
       this.toggleOpenFn()
-    } 
+    }
   }
 
   private toggleOpenFn = (): void => {
@@ -55,22 +55,22 @@ class Pane extends React.PureComponent<Props, State> {
     } = this.props
 
     return (
-      <div style={ wrapperStyle } className={ wrapperClassName }>
+      <div style={wrapperStyle} className={wrapperClassName}>
         <div
-          onClick={ this.toggleOpenFn }
-          style={ headerStyle }
-          className={ headerClassName }
-          onKeyUp={ this.onKeyUpFn }
+          onClick={this.toggleOpenFn}
+          style={headerStyle}
+          className={headerClassName}
+          onKeyUp={this.onKeyUpFn}
         >
-          { header }
+          {header}
         </div>
         <AnimateHeight
-          style={ bodyStyle }
-          className={ bodyClassName }
-          duration={ this.props.animationDuration }
-          height={ this.state.open ? 'auto' : 0 }
+          style={bodyStyle}
+          className={bodyClassName}
+          duration={this.props.animationDuration}
+          height={this.state.open ? 'auto' : 0}
         >
-          { children }
+          {children}
         </AnimateHeight>
       </div>
     )
