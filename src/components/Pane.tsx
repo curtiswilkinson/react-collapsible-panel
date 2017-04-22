@@ -15,6 +15,7 @@ interface Props {
   openIcon?: JSX.Element
   wrapperClassName?: string
   wrapperStyle?: React.CSSProperties
+  showIcon?: boolean
 }
 
 interface State {
@@ -55,8 +56,14 @@ class Pane extends React.PureComponent<Props, State> {
       wrapperStyle,
       wrapperClassName,
       openIcon,
-      closedIcon
+      closedIcon,
+      showIcon
     } = this.props
+
+    let icon
+    if (showIcon !== false) {
+      icon = this.state.open ? openIcon || <ArrowDown /> : closedIcon || <ArrowUp />
+    }
 
     return (
       <div style={wrapperStyle} className={wrapperClassName}>
@@ -68,9 +75,7 @@ class Pane extends React.PureComponent<Props, State> {
           tabIndex={0}
         >
           {header}
-          <span>
-            {this.state.open ? openIcon || <ArrowDown /> : closedIcon || <ArrowUp />}
-          </span>
+          {icon}
         </div>
         <AnimateHeight
           style={bodyStyle}

@@ -55,6 +55,13 @@ describe('<Pane />', () => {
       expect(sut.find('#closed').length).toEqual(0)
       expect(sut.find('#open').length).toEqual(1)
     })
+
+    it('will render no icons if showIcon props is false', () => {
+      const sut = shallow(<Pane header={<div />} showIcon={ false }>Hi</Pane>)
+
+      expect(sut.find(ArrowUp).length).toEqual(0)
+      expect(sut.find(ArrowDown).length).toEqual(0)
+    })
   })
 
   describe('Toggling', () => {
@@ -83,8 +90,7 @@ describe('<Pane />', () => {
 
     it('will toggle the icon based on the open state', () => {
       const sut = shallow(<Pane header={<div />}>Hi</Pane>)
-      ArrowUp.displayName = 'ArrowUp'
-      ArrowDown.displayName = 'ArrowDown'
+
       expect(sut.find(ArrowUp).length).toEqual(1)
       expect(sut.find(ArrowDown).length).toEqual(0)
 
