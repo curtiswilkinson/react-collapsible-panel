@@ -1,5 +1,7 @@
 import * as React from 'react'
 import * as AnimateHeight from 'react-animate-height'
+import * as ArrowUp from 'react-icons/lib/md/keyboard-arrow-up'
+import * as ArrowDown from 'react-icons/lib/md/keyboard-arrow-down'
 
 interface Props {
   animationDuration?: number
@@ -51,7 +53,9 @@ class Pane extends React.PureComponent<Props, State> {
       headerClassName,
       bodyClassName,
       wrapperStyle,
-      wrapperClassName
+      wrapperClassName,
+      openIcon,
+      closedIcon
     } = this.props
 
     return (
@@ -61,8 +65,12 @@ class Pane extends React.PureComponent<Props, State> {
           style={headerStyle}
           className={headerClassName}
           onKeyUp={this.onKeyUpFn}
+          tabIndex={0}
         >
           {header}
+          <span>
+            {this.state.open ? openIcon || <ArrowDown /> : closedIcon || <ArrowUp />}
+          </span>
         </div>
         <AnimateHeight
           style={bodyStyle}
