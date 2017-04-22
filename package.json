@@ -4,10 +4,46 @@
   "main": "./dist/index.js",
   "author": "Curtis Wilkinson",
   "license": "MIT",
+  "scripts": {
+    "test": "jest"
+  },
   "dependencies": {
+    "@types/enzyme": "^2.7.9",
+    "@types/jest": "^19.2.2",
     "@types/react": "^15.0.22",
+    "enzyme": "^2.8.2",
+    "global": "^4.3.2",
+    "jest": "^19.0.2",
     "react": "^15.5.4",
     "react-animate-height": "^0.9.1",
-    "tslint-react": "^2.6.0"
+    "react-dom": "^15.5.4",
+    "react-test-renderer": "^15.5.4",
+    "tslint-react": "^2.6.0",
+    "typescript": "^2.2.2"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{ts,tsx}"
+    ],
+    "testPathIgnorePatterns": [
+      "<rootDir>[/\\\\](build|docs|node_modules|scripts)[/\\\\]"
+    ],
+    "testEnvironment": "node",
+    "testURL": "http://localhost",
+    "transform": {
+      "^.+\\.tsx?$": "<rootDir>/jest/typescript.js"
+    },
+    "transformIgnorePatterns": [
+      "[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"
+    ],
+    "moduleNameMapper": {
+      "^react-native$": "react-native-web"
+    },
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$"
   }
 }

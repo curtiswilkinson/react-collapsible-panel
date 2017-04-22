@@ -26,21 +26,17 @@ class Pane extends React.PureComponent<Props, State> {
     this.state = { open: this.props.open || false }
   }
 
-  componentWillReceiveProps(nextProps): void {
+  public componentWillReceiveProps(nextProps): void {
     if (nextProps.open) {
       this.setState({ open: nextProps.open })
     }
   }
   
-  private keyListenerFn = (event: KeyboardEvent): void => {
+  private onKeyUpFn = (event: React.KeyboardEvent<HTMLDivElement>): void => {
     if (event.key === 'Enter') {
       this.toggleOpenFn()
-    }
+    } 
   }
-
-  private onFocusFn = (): void => document.addEventListener( 'keyup', this.keyListenerFn)
-
-  private onBlurFn = (): void => document.removeEventListener('keyup')
 
   private toggleOpenFn = (): void => {
     this.setState(prevState => ({ open: !prevState.open }))
@@ -64,8 +60,7 @@ class Pane extends React.PureComponent<Props, State> {
           onClick={ this.toggleOpenFn }
           style={ headerStyle }
           className={ headerClassName }
-          onFocus={ this.onFocusFn }
-          onBlur={ this.onBlurFn }
+          onKeyUp={ this.onKeyUpFn }
         >
           { header }
         </div>
@@ -74,8 +69,6 @@ class Pane extends React.PureComponent<Props, State> {
           className={ bodyClassName }
           duration={ this.props.animationDuration }
           height={ this.state.open ? 'auto' : 0 }
-          onFocus={ this.onFocusFn }
-          onBlur={ this.onBlurFn }
         >
           { children }
         </AnimateHeight>
