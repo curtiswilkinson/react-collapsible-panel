@@ -16,6 +16,7 @@ interface Props {
   wrapperClassName?: string
   wrapperStyle?: React.CSSProperties
   showIcon?: boolean
+  toggleFn?: () => void
 }
 
 interface State {
@@ -68,7 +69,7 @@ class Pane extends React.PureComponent<Props, State> {
     return (
       <div style={wrapperStyle} className={wrapperClassName}>
         <div
-          onClick={this.toggleOpenFn}
+          onClick={this.props.toggleFn || this.toggleOpenFn}
           style={headerStyle}
           className={headerClassName}
           onKeyUp={this.onKeyUpFn}
