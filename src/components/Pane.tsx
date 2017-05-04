@@ -3,7 +3,7 @@ import * as AnimateHeight from 'react-animate-height'
 import * as ArrowDown from 'react-icons/lib/md/keyboard-arrow-down'
 import * as ArrowUp from 'react-icons/lib/md/keyboard-arrow-up'
 
-interface Props {
+export interface Props {
   animationDuration?: number
   bodyClassName?: string
   bodyStyle?: React.CSSProperties
@@ -19,7 +19,7 @@ interface Props {
   toggleFn?: () => void
 }
 
-interface State {
+export interface State {
   open: boolean
 }
 

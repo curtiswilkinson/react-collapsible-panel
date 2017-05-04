@@ -1,11 +1,11 @@
 import * as React from 'react'
 
-interface Props {
+export interface Props {
   defaultOpen?: number | null
   wrapperStyle?: React.CSSProperties
 }
 
-interface State {
+export interface State {
   openIndex: number | null
 }
 

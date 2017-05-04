@@ -2,10 +2,10 @@
   "compilerOptions": {
     "outDir": "dist",
     "module": "commonjs",
+    "declaration": true,
     "target": "es5",
     "lib": ["es6", "dom"],
     "sourceMap": false,
-    "allowJs": true,
     "jsx": "react",
     "moduleResolution": "node",
     "rootDir": "src",
