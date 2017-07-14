@@ -16,7 +16,6 @@ export interface Props {
   wrapperClassName?: string
   wrapperStyle?: React.CSSProperties
   showIcon?: boolean
-  toggleFn?: () => void
 }
 
 export interface State {
@@ -31,9 +30,7 @@ class Pane extends React.PureComponent<Props, State> {
   }
 
   public componentWillReceiveProps(nextProps): void {
-    if (nextProps.open) {
-      this.setState({ open: nextProps.open })
-    }
+    this.setState({ open: nextProps.open })
   }
 
   private onKeyUpFn = (event: React.KeyboardEvent<HTMLDivElement>): void => {
@@ -63,13 +60,13 @@ class Pane extends React.PureComponent<Props, State> {
 
     let icon
     if (showIcon !== false) {
-      icon = this.state.open ? openIcon || <ArrowUp size={ 30 } /> : closedIcon || <ArrowDown size={ 30 }/>
+      icon = this.state.open ? openIcon || <ArrowUp size={ 30 } color='inherit' /> : closedIcon || <ArrowDown size={ 30 } color='inherit'/>
     }
 
     return (
       <div style={wrapperStyle} className={wrapperClassName}>
         <div
-          onClick={this.props.toggleFn || this.toggleOpenFn}
+          onClick={this.toggleOpenFn}
           style={{...styles.headerWrap, ...headerStyle}}
           className={headerClassName}
           onKeyUp={this.onKeyUpFn}
@@ -78,7 +75,7 @@ class Pane extends React.PureComponent<Props, State> {
           <div style={ styles.headerText }>
             {header}
           </div>
-          {icon}
+          {this.props.showIcon === false ? null : icon}
         </div>
         <AnimateHeight
           style={bodyStyle}
