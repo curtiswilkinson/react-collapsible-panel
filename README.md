@@ -1,7 +1,7 @@
 # React Collapsible Panel
 A simple Accordion component with sensible defaults.
 
-React collapsible simply takes a header, wrappers children, and displays them as an accordion with default animation, toggle icons, keyboard control and tab focusing.
+React collapsible simply takes a header, wrappers children, and displays them as an accordion with default animation, toggle icons and keyboard control.
 
 ## Usage Example
 
