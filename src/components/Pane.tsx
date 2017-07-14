@@ -93,7 +93,9 @@ class Pane extends React.PureComponent<Props, State> {
 const styles: { [index: string]: React.CSSProperties } = {
   headerWrap: {
     display: 'flex',
-    alignItems: 'center'
+    alignItems: 'center',
+    padding: '5px 10px',
+    cursor: 'pointer'
   },
   headerText: {
     flex: '1 1 auto'

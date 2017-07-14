@@ -24,6 +24,13 @@ const Dev = (props) => {
         <p>Here is some content</p>
         <p>Here is some content</p>
       </Pane>
+      <Pane
+        header={<h3 style={{ margin: 0 }}>Here is my Header</h3>}
+        headerStyle={{ backgroundColor: '#333', color: '#fff' }}
+        bodyStyle={{ border: '1px solid #ccc' }}
+      >
+        <p>Here is my content as a child component</p>
+      </Pane>
     </div>
   )
 }

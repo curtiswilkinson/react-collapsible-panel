@@ -3,6 +3,20 @@ A simple Accordion component with sensible defaults.
 
 React collapsible simply takes a header, wrappers children, and displays them as an accordion with default animation, toggle icons, keyboard control and tab focusing.
 
+## Usage Example
+
+The usage is extremely simple, provide a header component, some optional style objects (or classNames to use a stylesheet against) and nest your content as child components:
+
+```
+<Pane
+header={<h3 style={{ margin: 0 }}>Here is my Header</h3>}
+headerStyle={{ backgroundColor: '#333', color: '#fff' }}
+bodyStyle={{ border: '1px solid #ccc' }}
+>
+  <p>Here is my content as a child component</p>
+</Pane>
+```
+
 ## Props
 | Prop Name                    | Type                | Default    | Description                                                                        |
 |------------------------------|---------------------|------------|------------------------------------------------------------------------------------|
