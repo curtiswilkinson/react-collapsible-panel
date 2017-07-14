@@ -91,13 +91,13 @@ describe('<Pane />', () => {
     it('will toggle the icon based on the open state', () => {
       const sut = shallow(<Pane header={<div />}>Hi</Pane>)
 
-      expect(sut.find(ArrowUp).length).toEqual(1)
-      expect(sut.find(ArrowDown).length).toEqual(0)
+      expect(sut.find(ArrowUp).length).toEqual(0)
+      expect(sut.find(ArrowDown).length).toEqual(1)
 
       sut.find('div[onClick]').simulate('click')
 
-      expect(sut.find(ArrowUp).length).toEqual(0)
-      expect(sut.find(ArrowDown).length).toEqual(1)
+      expect(sut.find(ArrowUp).length).toEqual(1)
+      expect(sut.find(ArrowDown).length).toEqual(0)
     })
   })
 })

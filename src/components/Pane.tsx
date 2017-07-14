@@ -63,19 +63,21 @@ class Pane extends React.PureComponent<Props, State> {
 
     let icon
     if (showIcon !== false) {
-      icon = this.state.open ? openIcon || <ArrowDown /> : closedIcon || <ArrowUp />
+      icon = this.state.open ? openIcon || <ArrowUp size={ 30 } /> : closedIcon || <ArrowDown size={ 30 }/>
     }
 
     return (
       <div style={wrapperStyle} className={wrapperClassName}>
         <div
           onClick={this.props.toggleFn || this.toggleOpenFn}
-          style={headerStyle}
+          style={{...styles.headerWrap, ...headerStyle}}
           className={headerClassName}
           onKeyUp={this.onKeyUpFn}
           tabIndex={0}
         >
-          {header}
+          <div style={ styles.headerText }>
+            {header}
+          </div>
           {icon}
         </div>
         <AnimateHeight
@@ -88,6 +90,18 @@ class Pane extends React.PureComponent<Props, State> {
         </AnimateHeight>
       </div>
     )
+  }
+}
+
+const styles: { [index: string]: React.CSSProperties } = {
+  headerWrap: {
+    display: 'flex',
+    alignItems: 'center'
+  },
+  headerText: {
+    flex: '1 1 auto'
+  },
+  headerIcon: {
   }
 }
 

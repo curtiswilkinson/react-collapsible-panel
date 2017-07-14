@@ -108,6 +108,7 @@
       true,
       "call-signature"
     ],
+    "ordered-imports": false,
     "typedef-whitespace": [
       true,
       {
