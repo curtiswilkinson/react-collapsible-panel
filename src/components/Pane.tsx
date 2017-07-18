@@ -74,7 +74,7 @@ class Pane extends React.PureComponent<Props, State> {
           style={ {...styles.headerWrap, ...headerStyle} }
           className={ headerClassName }
           onKeyUp={ this.onKeyUpFn }
-          tabIndex={ this.props.tabIndex !== undefined ? this.props.tabIndex || 0 }
+          tabIndex={ tabIndex !== undefined ? tabIndex : 0 }
         >
           <div style={ styles.headerText }>
             { header }
