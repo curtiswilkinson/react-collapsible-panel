@@ -30,3 +30,4 @@ bodyStyle={{ border: '1px solid #ccc' }}
 | bodyClassName (optional)     | string              | None       | The className property applied to the wrapper of the pane content                  |
 | bodyStyle (optional)         | React.CSSProperties | None       | An object of styles that will be applied inline to the wrapper of the pane content |
 | headerClassName (optional)   | string              | None       | The className property applied to the wrapper of the pane content                  |
+| tabIndex (optional)          | number              | 0          | The tabIndex HTML property that will be applied to the header wrapper              |

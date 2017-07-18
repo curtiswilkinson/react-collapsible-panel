@@ -16,6 +16,7 @@ export interface Props {
   wrapperClassName?: string
   wrapperStyle?: React.CSSProperties
   showIcon?: boolean
+  tabIndex?: number
 }
 
 export interface State {
@@ -55,35 +56,38 @@ class Pane extends React.PureComponent<Props, State> {
       wrapperClassName,
       openIcon,
       closedIcon,
-      showIcon
+      showIcon,
+      tabIndex
     } = this.props
 
     let icon
     if (showIcon !== false) {
-      icon = this.state.open ? openIcon || <ArrowUp size={ 30 } color='inherit' /> : closedIcon || <ArrowDown size={ 30 } color='inherit'/>
+      icon = this.state.open
+           ? openIcon || <ArrowUp size={ 30 } color='inherit' />
+           : closedIcon || <ArrowDown size={ 30 } color='inherit'/>
     }
 
     return (
-      <div style={wrapperStyle} className={wrapperClassName}>
+      <div style={ wrapperStyle } className={ wrapperClassName }>
         <div
-          onClick={this.toggleOpenFn}
-          style={{...styles.headerWrap, ...headerStyle}}
-          className={headerClassName}
-          onKeyUp={this.onKeyUpFn}
-          tabIndex={0}
+          onClick={ this.toggleOpenFn }
+          style={ {...styles.headerWrap, ...headerStyle} }
+          className={ headerClassName }
+          onKeyUp={ this.onKeyUpFn }
+          tabIndex={ this.props.tabIndex !== undefined ? this.props.tabIndex || 0 }
         >
           <div style={ styles.headerText }>
-            {header}
+            { header }
           </div>
-          {this.props.showIcon === false ? null : icon}
+          { this.props.showIcon === false ? null : icon }
         </div>
         <AnimateHeight
-          style={bodyStyle}
-          className={bodyClassName}
-          duration={this.props.animationDuration}
-          height={this.state.open ? 'auto' : 0}
+          style={ bodyStyle }
+          className={ bodyClassName }
+          duration={ this.props.animationDuration }
+          height={ this.state.open ? 'auto' : 0 }
         >
-          {children}
+          { children }
         </AnimateHeight>
       </div>
     )
